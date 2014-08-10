@@ -1,0 +1,16 @@
+<div class="wrapper">
+	<h1>Editing product</h1>
+	
+<%= simple_form_for :product, url: '/products/'+@id, method: :patch do |f| %>
+	<%= f.input :category, label_html: { class: 'form-group' }, input_html: { class: 'form-control' }, collection: @categories %>
+	<%= f.input :name, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+	<%= f.input :description, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+	<%= f.input :pricing, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+	<%= f.button :submit, "Update", class: "btn-primary" %>
+<% end %>
+
+	<div class="nav">
+		<a href="/products/<%= @id %>">Show</a>
+		<a href="/">Back</a>
+	</div>
+</div>
