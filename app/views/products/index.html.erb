@@ -1,5 +1,11 @@
 <div class="wrapper">
-	<h1>Listing products</h1>
+	<header>
+		<h1>Listing products
+		<%= simple_form_for :comments, url: 'comments/', method: :get do |f| %>
+			<%= f.button :submit, "All comments", class: "btn-info" %>
+		<% end %>
+		</h1>
+	</header>
 	<table class="table table-bordered">
 		<thead>
 			<tr>

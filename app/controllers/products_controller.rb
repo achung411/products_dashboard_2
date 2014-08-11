@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comment = Comment.new
   end
 
   def new
@@ -18,12 +19,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Category.find(cat_params[:category]).products.create(user_params)
+    Category.find(cat_params[:category]).products.create(prod_params)
     redirect_to '/'
   end
 
   def update
-    Product.find(params[:id]).update(user_params)
+    Product.find(params[:id]).update(prod_params)
     Category.find(cat_params[:category]).products << Product.find(params[:id])
     redirect_to '/'
   end
@@ -34,7 +35,7 @@ class ProductsController < ApplicationController
   end
 
   private
-  def user_params
+  def prod_params
     params.require(:product).permit(:name, :description, :pricing)
   end
 

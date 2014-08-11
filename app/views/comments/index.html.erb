@@ -1,0 +1,22 @@
+<div class="wrapper">
+	<h1>All Comments</h1>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Comments</th>
+				<th>Products</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @comments.each do |item| %>
+			<tr class="<%= cycle('odd', 'even') %>">
+				<td><%= item.comment %></td>
+				<td><%= item.product.name %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	<div class="nav">
+		<a href="/">Back</a>
+	</div>
+</div>

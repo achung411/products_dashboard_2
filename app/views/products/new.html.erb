@@ -4,9 +4,9 @@
 <%= simple_form_for @product do |f| %>
 	<%= f.input :category, collection: @categories, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
 	<%= f.input :name, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
-	<%= f.input :description, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+	<%= f.input :description, label_html: { class: 'form-group' }, input_html: { class: 'form-control', rows: 4 } %>
 	<%= f.input :pricing, label_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
-	<%= f.button :submit, "Create", class: "btn btn-primary" %>
+	<%= f.button :submit, "Create", class: "btn-primary" %>
 <% end %>
 
 	<div class="nav">
